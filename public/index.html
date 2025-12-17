@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexaStudio | Agencja Kreatywna</title>
+  <meta name="description" content="NexaStudio - Profesjonalna agencja kreatywna. Tworzymy nowoczesne strony internetowe, sklepy online, aplikacje mobilne i identyfikacje wizualne.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-theme="dark">
+  <div class="page-loader">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <span class="logo-icon">N</span>
+      </div>
+      <div class="loader-bar">
+        <div class="loader-progress"></div>
+      </div>
+      <span class="loader-text">Ladowanie...</span>
+    </div>
+  </div>
+
+  <div class="custom-cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+    <i class="fas fa-sun"></i>
+  </button>
+
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">N</span>
+        <span class="logo-text">NexaStudio</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home">Start</a></li>
+        <li><a href="#services">Uslugi</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#about">O Nas</a></li>
+        <li><a href="#testimonials">Opinie</a></li>
+        <li><a href="#contact" class="nav-cta">Kontakt</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="hero">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1" data-parallax="0.3"></div>
+      <div class="gradient-orb orb-2" data-parallax="0.5"></div>
+      <div class="gradient-orb orb-3" data-parallax="0.2"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-badge reveal-on-scroll">
+        <i class="fas fa-rocket"></i> Agencja Kreatywna
+      </span>
+      <h1 class="hero-title reveal-on-scroll">
+        Tworzymy <span class="gradient-text">Cyfrowe</span><br>Doswiadczenia
+      </h1>
+      <p class="hero-subtitle reveal-on-scroll">
+        Projektujemy i budujemy nowoczesne strony internetowe, aplikacje i marki, 
+        ktore wyrozniaja sie na tle konkurencji i przyciagaja klientow.
+      </p>
+      <div class="hero-buttons reveal-on-scroll">
+        <a href="#portfolio" class="btn btn-primary btn-magnetic">
+          <span>Zobacz Projekty</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-secondary btn-magnetic">
+          <i class="fas fa-comments"></i>
+          <span>Porozmawiajmy</span>
+        </a>
+      </div>
+      <div class="hero-stats reveal-on-scroll">
+        <div class="stat">
+          <span class="stat-number" data-target="150">0</span>
+          <span class="stat-label">Projektow</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="98">0</span>
+          <span class="stat-label">% Zadowolenia</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="7">0</span>
+          <span class="stat-label">Lat Doswiadczenia</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Przewin w dol</span>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients-bar">
+    <div class="container">
+      <p>Zaufali nam:</p>
+      <div class="clients-logos">
+        <div class="client-logo"><i class="fab fa-google"></i></div>
+        <div class="client-logo"><i class="fab fa-microsoft"></i></div>
+        <div class="client-logo"><i class="fab fa-apple"></i></div>
+        <div class="client-logo"><i class="fab fa-amazon"></i></div>
+        <div class="client-logo"><i class="fab fa-spotify"></i></div>
+        <div class="client-logo"><i class="fab fa-slack"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge">Co Oferujemy</span>
+        <h2 class="section-title">Nasze <span class="gradient-text">Uslugi</span></h2>
+        <p class="section-subtitle">Kompleksowe rozwiazania cyfrowe dla Twojego biznesu</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal-on-scroll" data-delay="0">
+          <div class="service-glow"></div>
+          <div class="service-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Strony Internetowe</h3>
+          <p>Nowoczesne, responsywne strony WWW dopasowane do Twoich potrzeb biznesowych.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Responsive Design</li>
+            <li><i class="fas fa-check"></i> Optymalizacja SEO</li>
+            <li><i class="fas fa-check"></i> Szybkie ladowanie</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card featured reveal-on-scroll" data-delay="100">
+          <div class="service-glow"></div>
+          <div class="featured-badge">Popularne</div>
+          <div class="service-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h3>Sklepy Online</h3>
+          <p>Profesjonalne platformy e-commerce z pelna integracja platnosci.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> System platnosci</li>
+            <li><i class="fas fa-check"></i> Panel administracyjny</li>
+            <li><i class="fas fa-check"></i> Integracje API</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal-on-scroll" data-delay="200">
+          <div class="service-glow"></div>
+          <div class="service-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Aplikacje Mobilne</h3>
+          <p>Natywne i hybrydowe aplikacje na iOS i Android.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> iOS i Android</li>
+            <li><i class="fas fa-check"></i> Intuicyjny UX</li>
+            <li><i class="fas fa-check"></i> Powiadomienia Push</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal-on-scroll" data-delay="300">
+          <div class="service-glow"></div>
+          <div class="service-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Branding</h3>
+          <p>Kompleksowa identyfikacja wizualna i projektowanie logo.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Logo design</li>
+            <li><i class="fas fa-check"></i> Ksiega znaku</li>
+            <li><i class="fas fa-check"></i> Materialy marketingowe</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal-on-scroll" data-delay="400">
+          <div class="service-glow"></div>
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3>Marketing Digital</h3>
+          <p>Strategie marketingowe i kampanie reklamowe online.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> Google Ads</li>
+            <li><i class="fas fa-check"></i> Social Media</li>
+            <li><i class="fas fa-check"></i> Content Marketing</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="service-card reveal-on-scroll" data-delay="500">
+          <div class="service-glow"></div>
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Hosting & Wsparcie</h3>
+          <p>Niezawodny hosting i ciagla obsluga techniczna.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check"></i> SSL Certificate</li>
+            <li><i class="fas fa-check"></i> Backup danych</li>
+            <li><i class="fas fa-check"></i> Wsparcie 24/7</li>
+          </ul>
+          <a href="#contact" class="service-link">
+            Dowiedz sie wiecej <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge">Nasze Prace</span>
+        <h2 class="section-title">Wybrane <span class="gradient-text">Projekty</span></h2>
+        <p class="section-subtitle">Zobacz niektore z naszych najnowszych realizacji</p>
+      </div>
+      <div class="portfolio-filter reveal-on-scroll">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th-large"></i> Wszystkie
+        </button>
+        <button class="filter-btn" data-filter="web">
+          <i class="fas fa-globe"></i> Strony WWW
+        </button>
+        <button class="filter-btn" data-filter="ecommerce">
+          <i class="fas fa-shopping-bag"></i> E-commerce
+        </button>
+        <button class="filter-btn" data-filter="branding">
+          <i class="fas fa-paint-brush"></i> Branding
+        </button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item reveal-on-scroll" data-category="web" data-delay="0">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="portfolio-icon"><i class="fas fa-building"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Strona WWW</span>
+              <h3>TechVision Corp</h3>
+              <p>Korporacyjna strona dla firmy IT</p>
+              <div class="portfolio-tech">
+                <span>React</span><span>Node.js</span><span>MongoDB</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item large reveal-on-scroll" data-category="ecommerce" data-delay="100">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+            <div class="portfolio-icon"><i class="fas fa-tshirt"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">E-commerce</span>
+              <h3>FashionHub</h3>
+              <p>Sklep online z odzieza premium</p>
+              <div class="portfolio-tech">
+                <span>Shopify</span><span>React</span><span>Stripe</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal-on-scroll" data-category="branding" data-delay="200">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+            <div class="portfolio-icon"><i class="fas fa-leaf"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Branding</span>
+              <h3>GreenLife</h3>
+              <p>Identyfikacja wizualna marki eko</p>
+              <div class="portfolio-tech">
+                <span>Figma</span><span>Illustrator</span><span>Photoshop</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal-on-scroll" data-category="web" data-delay="300">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+            <div class="portfolio-icon"><i class="fas fa-dumbbell"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Strona WWW</span>
+              <h3>FitZone</h3>
+              <p>Strona dla sieci fitness klubow</p>
+              <div class="portfolio-tech">
+                <span>Vue.js</span><span>Laravel</span><span>MySQL</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item reveal-on-scroll" data-category="ecommerce" data-delay="400">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+            <div class="portfolio-icon"><i class="fas fa-couch"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">E-commerce</span>
+              <h3>HomeDecor</h3>
+              <p>Sklep z wyposazeniem wnetrz</p>
+              <div class="portfolio-tech">
+                <span>WooCommerce</span><span>WordPress</span><span>PayU</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item large reveal-on-scroll" data-category="web" data-delay="500">
+          <div class="portfolio-image" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);">
+            <div class="portfolio-icon"><i class="fas fa-cloud"></i></div>
+            <div class="portfolio-overlay">
+              <span class="portfolio-category">Strona WWW</span>
+              <h3>CloudServe</h3>
+              <p>Platforma uslug chmurowych</p>
+              <div class="portfolio-tech">
+                <span>Next.js</span><span>AWS</span><span>PostgreSQL</span>
+              </div>
+              <a href="#" class="portfolio-link"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="portfolioModal" class="portfolio-modal">
+    <div class="modal-content">
+      <button class="modal-close"><i class="fas fa-times"></i></button>
+      <div class="modal-hero"></div>
+      <div class="modal-body">
+        <span class="modal-category">Kategoria</span>
+        <h2 class="modal-title">Tytul Projektu</h2>
+        <p class="modal-description">Opis projektu...</p>
+        <div class="modal-details">
+          <div class="modal-detail">
+            <h4>Wyzwanie</h4>
+            <p>Klient potrzebowal nowoczesnej strony internetowej, ktora wyrozni sie na tle konkurencji i przyciagnie nowych klientow.</p>
+          </div>
+          <div class="modal-detail">
+            <h4>Rozwiazanie</h4>
+            <p>Zaprojektowalismy i wdrozylismy kompleksowa strone z zaawansowanymi animacjami, zoptymalizowana pod SEO.</p>
+          </div>
+          <div class="modal-detail">
+            <h4>Rezultaty</h4>
+            <p>Wzrost ruchu o 200%, zwiekszenie konwersji o 150%, poprawa pozycji w Google.</p>
+          </div>
+        </div>
+        <div class="modal-stats">
+          <div class="modal-stat">
+            <span class="modal-stat-number">200%</span>
+            <span class="modal-stat-label">Wiecej ruchu</span>
+          </div>
+          <div class="modal-stat">
+            <span class="modal-stat-number">150%</span>
+            <span class="modal-stat-label">Wiecej konwersji</span>
+          </div>
+          <div class="modal-stat">
+            <span class="modal-stat-number">Top 3</span>
+            <span class="modal-stat-label">Pozycja Google</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <span class="section-badge reveal-on-scroll">Kim Jestesmy</span>
+          <h2 class="section-title reveal-on-scroll">Zespol <span class="gradient-text">Pasjonatow</span></h2>
+          <p class="about-text reveal-on-scroll">
+            Jestesmy zespolem kreatywnych profesjonalistow z ponad 7-letnim doswiadczeniem 
+            w tworzeniu cyfrowych rozwiazan. Laczymy innowacyjne projektowanie z najnowszymi 
+            technologiami, aby dostarczac produkty, ktore naprawde dzialaja.
+          </p>
+          <p class="about-text reveal-on-scroll">
+            Kazdy projekt traktujemy indywidualnie, wspolpracujac blisko z klientami, 
+            aby zrozumiec ich wizje i przeksztalcic ja w rzeczywistosc.
+          </p>
+          <div class="about-features">
+            <div class="feature reveal-on-scroll" data-delay="0">
+              <div class="feature-icon"><i class="fas fa-lightbulb"></i></div>
+              <div class="feature-content">
+                <h4>Kreatywne Podejscie</h4>
+                <p>Unikalne rozwiazania dla kazdego projektu</p>
+              </div>
+            </div>
+            <div class="feature reveal-on-scroll" data-delay="100">
+              <div class="feature-icon"><i class="fas fa-clock"></i></div>
+              <div class="feature-content">
+                <h4>Terminowosc</h4>
+                <p>Zawsze dostarczamy na czas</p>
+              </div>
+            </div>
+            <div class="feature reveal-on-scroll" data-delay="200">
+              <div class="feature-icon"><i class="fas fa-headset"></i></div>
+              <div class="feature-content">
+                <h4>Wsparcie 24/7</h4>
+                <p>Dostepni gdy nas potrzebujesz</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-skills reveal-on-scroll">
+            <div class="skill">
+              <div class="skill-header">
+                <span>UI/UX Design</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="95"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-header">
+                <span>Web Development</span>
+                <span>98%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="98"></div>
+              </div>
+            </div>
+            <div class="skill">
+              <div class="skill-header">
+                <span>Mobile Apps</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-progress="88"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image reveal-on-scroll">
+          <div class="image-wrapper">
+            <div class="image-bg"></div>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);"></div>
+                <span>CEO</span>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);"></div>
+                <span>CTO</span>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);"></div>
+                <span>Designer</span>
+              </div>
+              <div class="team-member">
+                <div class="member-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7);"></div>
+                <span>Developer</span>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card card-1">
+            <i class="fas fa-code"></i>
+            <span>Clean Code</span>
+          </div>
+          <div class="floating-card card-2">
+            <i class="fas fa-heart"></i>
+            <span>Made with Love</span>
+          </div>
+          <div class="floating-card card-3">
+            <i class="fas fa-award"></i>
+            <span>Award Winning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge">Jak Pracujemy</span>
+        <h2 class="section-title">Nasz <span class="gradient-text">Proces</span></h2>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step reveal-on-scroll" data-delay="0">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <div class="step-icon"><i class="fas fa-comments"></i></div>
+            <h3>Konsultacja</h3>
+            <p>Poznajemy Twoje potrzeby i cele biznesowe</p>
+          </div>
+        </div>
+        <div class="process-step reveal-on-scroll" data-delay="150">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <div class="step-icon"><i class="fas fa-pencil-ruler"></i></div>
+            <h3>Projektowanie</h3>
+            <p>Tworzymy unikalne projekty graficzne</p>
+          </div>
+        </div>
+        <div class="process-step reveal-on-scroll" data-delay="300">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <div class="step-icon"><i class="fas fa-code"></i></div>
+            <h3>Rozwoj</h3>
+            <p>Kodujemy z najwyzszymi standardami</p>
+          </div>
+        </div>
+        <div class="process-step reveal-on-scroll" data-delay="450">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <div class="step-icon"><i class="fas fa-rocket"></i></div>
+            <h3>Wdrozenie</h3>
+            <p>Uruchamiamy i wspieramy projekt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tech-stack">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge">Technologie</span>
+        <h2 class="section-title">Nasze <span class="gradient-text">Narzedzia</span></h2>
+      </div>
+      <div class="tech-carousel">
+        <div class="tech-track">
+          <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+          <div class="tech-item"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+          <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+          <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="tech-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+          <div class="tech-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+          <div class="tech-item"><i class="fab fa-figma"></i><span>Figma</span></div>
+          <div class="tech-item"><i class="fab fa-aws"></i><span>AWS</span></div>
+          <div class="tech-item"><i class="fab fa-docker"></i><span>Docker</span></div>
+          <div class="tech-item"><i class="fab fa-git-alt"></i><span>Git</span></div>
+          <div class="tech-item"><i class="fab fa-react"></i><span>React</span></div>
+          <div class="tech-item"><i class="fab fa-vuejs"></i><span>Vue.js</span></div>
+          <div class="tech-item"><i class="fab fa-node-js"></i><span>Node.js</span></div>
+          <div class="tech-item"><i class="fab fa-python"></i><span>Python</span></div>
+          <div class="tech-item"><i class="fab fa-wordpress"></i><span>WordPress</span></div>
+          <div class="tech-item"><i class="fab fa-shopify"></i><span>Shopify</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-badge">Referencje</span>
+        <h2 class="section-title">Co Mowia <span class="gradient-text">Klienci</span></h2>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial-card active">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"Wspolpraca z NexaStudio to czysta przyjemnosc. Profesjonalne podejscie, swietna komunikacja i efekt koncowy, ktory przerósł nasze oczekiwania. Polecam kazdemu!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+              <span>AK</span>
+            </div>
+            <div class="author-info">
+              <h4>Anna Kowalska</h4>
+              <span>CEO, TechVision</span>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"Nasz nowy sklep internetowy dziala niezawodnie i wyglada fantastycznie. Sprzedaz wzrosla o 200% w ciagu pierwszych trzech miesiecy!"</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+              <span>MN</span>
+            </div>
+            <div class="author-info">
+              <h4>Marek Nowak</h4>
+              <span>Wlasciciel, FashionHub</span>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+            <p>"Zespol NexaStudio rozumie potrzeby biznesu. Otrzymalismy nie tylko piekna strone, ale prawdziwe narzedzie do generowania leadow."</p>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+              <span>KW</span>
+            </div>
+            <div class="author-info">
+              <h4>Katarzyna Wisniewska</h4>
+              <span>Marketing Director, GreenLife</span>
+            </div>
+          </div>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="testimonials-nav">
+        <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="nav-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content reveal-on-scroll">
+        <h2>Gotowy na Rozpoczecie <span class="gradient-text">Projektu</span>?</h2>
+        <p>Porozmawiajmy o Twoich potrzebach i stworzmy cos wyjatkowego razem.</p>
+        <a href="#contact" class="btn btn-primary btn-large btn-magnetic">
+          <span>Bezplatna Konsultacja</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-badge reveal-on-scroll">Kontakt</span>
+          <h2 class="section-title reveal-on-scroll">Porozmawiajmy o <span class="gradient-text">Twoim Projekcie</span></h2>
+          <p class="reveal-on-scroll">Masz pytania lub chcesz omowic wspolprace? Skontaktuj sie z nami!</p>
+          <div class="contact-details">
+            <div class="contact-item reveal-on-scroll" data-delay="0">
+              <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-text">
+                <span>Email</span>
+                <a href="mailto:hello@nexastudio.pl">hello@nexastudio.pl</a>
+              </div>
+            </div>
+            <div class="contact-item reveal-on-scroll" data-delay="100">
+              <div class="contact-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-text">
+                <span>Telefon</span>
+                <a href="tel:+48123456789">+48 123 456 789</a>
+              </div>
+            </div>
+            <div class="contact-item reveal-on-scroll" data-delay="200">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-text">
+                <span>Biuro</span>
+                <p>ul. Kreatywna 42<br>00-001 Warszawa</p>
+              </div>
+            </div>
+          </div>
+          <div class="social-links reveal-on-scroll">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-behance"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrapper reveal-on-scroll">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="name" required>
+                <label for="name">Imie i Nazwisko</label>
+                <span class="form-line"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" required>
+                <label for="email">Email</label>
+                <span class="form-line"></span>
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="service" required>
+                <option value="" disabled selected></option>
+                <option value="website">Strona Internetowa</option>
+                <option value="ecommerce">Sklep Online</option>
+                <option value="app">Aplikacja Mobilna</option>
+                <option value="branding">Branding</option>
+                <option value="other">Inne</option>
+              </select>
+              <label for="service">Czego Potrzebujesz?</label>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <input type="text" id="budget" required>
+              <label for="budget">Budzet (orientacyjnie)</label>
+              <span class="form-line"></span>
+            </div>
+            <div class="form-group">
+              <textarea id="message" rows="4" required></textarea>
+              <label for="message">Wiadomosc</label>
+              <span class="form-line"></span>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full btn-magnetic">
+              <span>Wyslij Wiadomosc</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon">N</span>
+            <span class="logo-text">NexaStudio</span>
+          </div>
+          <p>Tworzymy cyfrowe doswiadczenia, ktore inspiruja i przynasza rezultaty.</p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Uslugi</h4>
+          <ul>
+            <li><a href="#">Strony WWW</a></li>
+            <li><a href="#">Sklepy Online</a></li>
+            <li><a href="#">Aplikacje</a></li>
+            <li><a href="#">Branding</a></li>
+            <li><a href="#">Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Firma</h4>
+          <ul>
+            <li><a href="#about">O Nas</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Kariera</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Newsletter</h4>
+          <p>Badz na biezaco z naszymi projektami</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Twoj email">
+            <button type="submit"><i class="fas fa-arrow-right"></i></button>
+          </form>
+          <div class="footer-badges">
+            <span><i class="fas fa-shield-alt"></i> SSL Secured</span>
+            <span><i class="fas fa-lock"></i> GDPR Compliant</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 NexaStudio. Wszelkie prawa zastrzezone.</p>
+        <div class="footer-legal">
+          <a href="#">Polityka Prywatnosci</a>
+          <a href="#">Regulamin</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
