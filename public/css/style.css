@@ -138,7 +138,7 @@ body:not(.loaded) {
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
-  z-index: 10001;
+  z-index: 10002;
   transform: translate(-50%, -50%);
   transition: transform 0.15s ease, background-color 0.15s ease;
   mix-blend-mode: difference;
@@ -147,11 +147,11 @@ body:not(.loaded) {
 .cursor-follower {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--primary);
+  border: 2px solid var(--primary);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
-  z-index: 10000;
+  z-index: 10001;
   transform: translate(-50%, -50%);
   transition: transform 0.3s ease, border-color 0.3s ease, width 0.3s ease, height 0.3s ease;
 }
