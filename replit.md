@@ -54,3 +54,6 @@ The server runs on port 5000.
 ## Recent Changes
 - Initial project creation (December 2024)
 - Full website implementation with all sections
+- December 21, 2024: Fixed cursor disappearing when portfolio modal opens
+  - Adjusted z-index values: custom-cursor from 9999 to 10001, cursor-follower from 9998 to 10000
+  - This ensures the custom cursor elements stay visible above the portfolio modal (z-index: 10000)
