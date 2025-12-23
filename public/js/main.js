@@ -422,7 +422,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   const contactForm = document.getElementById('contactForm');
   
-  contactForm.addEventListener('submit', function(e) {
+  contactForm.addEventListener('submit', async function(e) {
     e.preventDefault();
     
     const inputs = contactForm.querySelectorAll('input, select, textarea');
@@ -445,24 +445,50 @@ document.addEventListener('DOMContentLoaded', function() {
     submitBtn.innerHTML = '<span>Wysylanie...</span> <i class="fas fa-spinner fa-spin"></i>';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.innerHTML = '<span>Wyslano!</span> <i class="fas fa-check"></i>';
-      submitBtn.classList.add('success');
-      
-      contactForm.reset();
-      
-      const successMessage = document.createElement('div');
-      successMessage.className = 'form-success-message';
-      successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Dziekujemy! Odezwiemy sie wkrotce.';
-      contactForm.appendChild(successMessage);
-      
-      setTimeout(() => {
-        submitBtn.innerHTML = originalText;
-        submitBtn.classList.remove('success');
-        submitBtn.disabled = false;
-        successMessage.remove();
-      }, 4000);
-    }, 1500);
+    try {
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        service: document.getElementById('service').value,
+        budget: document.getElementById('budget').value,
+        message: document.getElementById('message').value
+      };
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        submitBtn.innerHTML = '<span>Wyslano!</span> <i class="fas fa-check"></i>';
+        submitBtn.classList.add('success');
+        
+        contactForm.reset();
+        
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success-message';
+        successMessage.innerHTML = '<i class="fas fa-check-circle"></i> Dziekujemy! Odezwiemy sie wkrotce.';
+        contactForm.appendChild(successMessage);
+        
+        setTimeout(() => {
+          submitBtn.innerHTML = originalText;
+          submitBtn.classList.remove('success');
+          submitBtn.disabled = false;
+          successMessage.remove();
+        }, 4000);
+      } else {
+        throw new Error(data.error || 'Błąd podczas wysyłania');
+      }
+    } catch (error) {
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+      alert('Błąd: ' + error.message);
+    }
   });
 
   const inputs = contactForm.querySelectorAll('input, textarea, select');
