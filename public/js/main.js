@@ -631,3 +631,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// Mega Animations & Effects
+const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+const observerOptions = {
+  threshold: 0.15,
+  rootMargin: '0px 0px -100px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, index * 100);
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+revealElements.forEach(el => observer.observe(el));
+
+// Parallax effect for orbs
+window.addEventListener('mousemove', (e) => {
+  const orbs = document.querySelectorAll('.gradient-orb');
+  const x = (window.innerWidth - e.clientX * 5) / 100;
+  const y = (window.innerHeight - e.clientY * 5) / 100;
+  
+  orbs.forEach(orb => {
+    orb.style.transform = `translate(${x}px, ${y}px)`;
+  });
+});
+
+// Enhanced button animations
+const buttons = document.querySelectorAll('.btn');
+buttons.forEach(btn => {
+  btn.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-3px) scale(1.05)';
+  });
+  btn.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+  });
+});
+
+// Card hover animations
+const cards = document.querySelectorAll('.portfolio-item, .testimonial-card, .service-card');
+cards.forEach(card => {
+  card.addEventListener('mouseenter', function() {
+    this.style.transform = 'translateY(-10px) scale(1.02)';
+  });
+  card.addEventListener('mouseleave', function() {
+    this.style.transform = 'translateY(0) scale(1)';
+  });
+});

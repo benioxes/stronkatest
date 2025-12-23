@@ -123,12 +123,126 @@ body:not(.loaded) {
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-50px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.5), 0 0 40px rgba(99, 102, 241, 0.2);
+  }
+  50% { 
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.8), 0 0 80px rgba(99, 102, 241, 0.4);
+  }
+}
+
+@keyframes blob-morph {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  25% { transform: scale(1.1) rotate(90deg); }
+  50% { transform: scale(0.9) rotate(180deg); }
+  75% { transform: scale(1.05) rotate(270deg); }
+}
+
+@keyframes text-reveal {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { 
+    background-position: -1000px 0;
+  }
+  100% { 
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0px); }
+  25% { transform: translateY(-5px); }
+  50% { transform: translateY(0px); }
+  75% { transform: translateY(5px); }
+}
+
+@keyframes bounce-in {
+  0% { 
+    opacity: 0; 
+    transform: scale(0.3);
+  }
+  50% { 
+    opacity: 1;
+  }
+  100% { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  0% { 
+    opacity: 0; 
+    transform: translateX(-100px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% { 
+    opacity: 0; 
+    transform: translateX(100px);
+  }
+  100% { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rotate-border {
+  0% { border-color: var(--primary); }
+  25% { border-color: var(--secondary); }
+  50% { border-color: var(--accent); }
+  75% { border-color: var(--primary); }
+  100% { border-color: var(--primary); }
+}
+
+@keyframes scale-pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float-rotate {
+  0% { 
+    transform: translateY(0) rotate(0deg);
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg);
+  }
+  100% { 
+    transform: translateY(0) rotate(360deg);
+  }
+}
   50% { transform: scale(1.1); }
 }
 
-.loader-text {
   color: var(--gray-light);
-  font-size: 0.9rem;
 }
 
 .custom-cursor {
@@ -450,6 +564,7 @@ body:not(.loaded) {
   line-height: 1.1;
   margin-bottom: 25px;
   letter-spacing: -2px;
+  animation: text-reveal 0.8s ease-out;
 }
 
 .hero-subtitle {
@@ -1444,7 +1559,8 @@ body:not(.loaded) {
 
 .tech-item:hover i {
   color: var(--primary);
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(20deg);
+  animation: glow-pulse 0.6s ease;
 }
 
 @keyframes slide {
@@ -1469,6 +1585,13 @@ body:not(.loaded) {
   text-align: center;
   display: none;
   border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.5s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
 .testimonial-card.active {
@@ -1489,6 +1612,7 @@ body:not(.loaded) {
   color: var(--primary);
   margin-bottom: 30px;
   opacity: 0.5;
+  animation: float 3s ease-in-out infinite;
 }
 
 .testimonial-content p {
@@ -2297,4 +2421,58 @@ body:not(.loaded) {
   .add-testimonial {
     padding: 40px 25px;
   }
+}
+
+.animate-in {
+  animation: bounce-in 0.6s ease-out !important;
+}
+
+.service-card {
+  animation: slide-in-left 0.6s ease-out backwards;
+}
+
+.service-card:nth-child(2) {
+  animation-name: slide-in-right;
+  animation-delay: 0.2s;
+}
+
+.service-card:nth-child(3) {
+  animation-name: slide-in-left;
+  animation-delay: 0.4s;
+}
+
+.btn:hover {
+  animation: scale-pop 0.4s ease !important;
+}
+
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background: var(--gradient);
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  border-radius: 2px;
+}
+
+.nav-links a:hover::before {
+  width: 100%;
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
