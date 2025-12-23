@@ -580,4 +580,54 @@ document.addEventListener('DOMContentLoaded', function() {
     cursor.style.display = 'none';
     cursorFollower.style.display = 'none';
   }
+
+  const testimonialForm = document.getElementById('testimonialForm');
+  if (testimonialForm) {
+    testimonialForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('testName').value;
+      const position = document.getElementById('testPosition').value;
+      const message = document.getElementById('testMessage').value;
+      const rating = document.querySelector('input[name="rating"]:checked')?.value;
+
+      if (!name || !position || !message || !rating) {
+        alert('Wszystkie pola są wymagane!');
+        return;
+      }
+
+      const submitBtn = testimonialForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span>Wysyłanie...</span> <i class="fas fa-spinner fa-spin"></i>';
+      submitBtn.disabled = true;
+
+      try {
+        const response = await fetch('/api/testimonials', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, position, message, rating })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          submitBtn.innerHTML = '<span>Dziękuję!</span> <i class="fas fa-check"></i>';
+          submitBtn.classList.add('success');
+          testimonialForm.reset();
+          
+          setTimeout(() => {
+            submitBtn.innerHTML = originalText;
+            submitBtn.classList.remove('success');
+            submitBtn.disabled = false;
+          }, 3000);
+        } else {
+          throw new Error(data.error || 'Błąd');
+        }
+      } catch (error) {
+        alert('Błąd: ' + error.message);
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      }
+    });
+  }
 });
